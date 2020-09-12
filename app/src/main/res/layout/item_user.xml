@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.jizhe7550.randomuser.model.User" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_20dp">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/imagen_avatar_size"
+            android:layout_height="@dimen/imagen_avatar_size"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loadUrlCircleCrop="@{user.picture.thumbnail}"
+            android:transitionName="@string/avatar_transition"
+            />
+
+        <TextView
+            android:id="@+id/tv_full_name"
+            style="@style/Item.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{user.name.fullName()}"
+            android:layout_marginLeft="@dimen/spacing_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:transitionName="@string/name_transition"
+            tools:text="Mickey Mouse" />
+
+        <TextView
+            android:id="@+id/tv_gender"
+            style="@style/Item.Body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{user.genderCapitalized()}"
+            android:layout_marginLeft="@dimen/spacing_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/tv_full_name"
+            tools:text="Male" />
+
+        <TextView
+            android:id="@+id/tv_dob"
+            style="@style/Item.Body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{user.dob.asString()}"
+            android:layout_marginLeft="@dimen/spacing_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gender"
+            tools:text="June 1928" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

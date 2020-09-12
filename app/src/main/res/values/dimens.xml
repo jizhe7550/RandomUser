@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="spacing_8dp">8dp</dimen>
+    <dimen name="spacing_20dp">20dp</dimen>
+    <dimen name="imagen_avatar_size">60dp</dimen>
+    <dimen name="imagen_avatar_big">200dp</dimen>
+
+    <dimen name="text_24sp">24sp</dimen>
+    <dimen name="text_16sp">16sp</dimen>
+    <dimen name="text_14sp">14sp</dimen>
+</resources>

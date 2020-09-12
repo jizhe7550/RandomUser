@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.jizhe7550.randomuser.ui.user_detail.UserDetailViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/imagen_avatar_big"
+            android:layout_height="@dimen/imagen_avatar_big"
+            android:layout_margin="@dimen/spacing_20dp"
+            android:gravity="center"
+            android:transitionName="@string/avatar_transition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loadUrlCircleCrop="@{viewModel.user.picture.large}" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/Detail.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_20dp"
+            android:text="@{viewModel.user.name.fullName()}"
+            android:transitionName="@string/name_transition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_avatar"
+            tools:text="Mickey Mouse" />
+
+        <TextView
+            android:id="@+id/tv_dob"
+            style="@style/Detail.Body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_20dp"
+            android:layout_marginTop="@dimen/spacing_8dp"
+            android:text="@{viewModel.user.dob.asString()}"
+            android:transitionName="@string/name_transition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            tools:text="Jun 1928" />
+
+        <TextView
+            android:id="@+id/tv_gender"
+            style="@style/Detail.Body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_20dp"
+            android:layout_marginTop="@dimen/spacing_8dp"
+            android:text="@{viewModel.user.genderCapitalized()}"
+            android:transitionName="@string/name_transition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dob"
+            tools:text="Male" />
+
+        <TextView
+            android:id="@+id/tv_mail"
+            style="@style/Detail.Body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_20dp"
+            android:layout_marginTop="@dimen/spacing_8dp"
+            android:text="@{viewModel.user.email}"
+            android:transitionName="@string/name_transition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gender"
+            tools:text="mickey@disney.com" />
+
+        <TextView
+            android:id="@+id/tv_phone"
+            style="@style/Detail.Body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_20dp"
+            android:layout_marginTop="@dimen/spacing_8dp"
+            android:text="@{viewModel.user.phone}"
+            android:transitionName="@string/name_transition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_mail"
+            tools:text="+1 123 3212" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            style="@style/Detail.Body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_20dp"
+            android:layout_marginTop="@dimen/spacing_8dp"
+            android:text="@{viewModel.user.location.fullAddress()}"
+            android:transitionName="@string/name_transition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_phone"
+            tools:text="12 Buena Vista Ave, Orlando, Florida" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
