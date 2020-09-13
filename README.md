@@ -17,10 +17,4 @@ An Android Client that fetches and displays data from randomuser.me.
 
 - Add IdlingResources for testing
 
-- Unit Tests setup and initial 10% code coverage
-
-- Enable code test coverage with JaCoCo, CodeCov
-
-- MockWebServer setup for integrated tests
-
 - CircleCi Integration
